@@ -1,8 +1,4 @@
 # Taking the number of subjects and storing it in a variable.
-from calendar import c
-from operator import le
-
-
 subnum = int(input("Enter number of subjects :"))
 idstuList = []
 subList = []
@@ -49,8 +45,8 @@ for sID in range(1, 6):
     # print(avGradeList)
 
 count = 0
-for i in range(len(avGradeList)):
-    if avGradeList[i] > sumGradeAverage:
+for i in avGradeList:
+    if i > sumGradeAverage:
         count = count +1
 print("The Number of Students Whose Grade is More Than Average : " + str(count))
 
