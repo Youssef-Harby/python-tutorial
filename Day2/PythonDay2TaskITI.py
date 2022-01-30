@@ -22,7 +22,7 @@ def subgradeSTud():
             # print("append " + str(subList))
         idstuList.append(st)
         idstuList.append(subList)
-
+        print(idstuList)
 subgradeSTud()
 # print(idstuList)
 
