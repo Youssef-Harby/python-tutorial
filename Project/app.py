@@ -3,6 +3,7 @@ import datetime
 import pandas as pd
 from player import *
 
+st.set_page_config(layout="wide")
 st.write(""" # Python OOP Project """)
     
     
@@ -24,6 +25,7 @@ vi = st.number_input('Number Of Matches Played',min_value=0, value=0, step=1)
 
 # SetState
 data = []
+
 if 'set' not in st.session_state:
      st.session_state.set = data
 if 'count' not in st.session_state:
@@ -34,12 +36,13 @@ def callbackf():
      # if change:
           st.session_state.count +=1
           p1 = player(i,ii,iii,iv,v,vi)
-          pdata1 = [p1.playerName,p1.playerNumber,p1.playerSalaryPerWeek,p1.playerSigningDate,p1.playerContractDurationInYears,p1.playerNumberOfMatchesPlayed]
+          st.write(p1.printPlayerData())
+          pdata1 = [p1.playerName,p1.playerNumber,p1.playerSalaryPerWeek,p1.playerSigningDate,p1.playerContractDurationInYears,p1.playerNumberOfMatchesPlayed,p1.calcSalaryPerYear(),p1.calcRemainingDuration()]
           st.session_state.set.append(pdata1)
 
-change = st.button('Change',on_click=callbackf) #(returns true/false)
+set = st.button('Setting',on_click=callbackf) #(returns true/false)
 
-df = pd.DataFrame(st.session_state.set, columns = ['Name', 'Number','Salary/Week','Signing Date', 'Contract Duration / Years','Number Of Matches Played'])
+df = pd.DataFrame(st.session_state.set, columns = ['Name', 'Number','Salary/Week','Signing Date', 'Contract Duration / Years','Number Of Matches Played','Salary / Year','Remaining Duration/Weeks'])
 st.table(df.head(st.session_state.count))
 # st.dataframe(df)
 # st.write('set = ', st.session_state.set)

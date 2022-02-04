@@ -123,12 +123,14 @@ class player(member):
         self.__setPlayerNumber(ii)
         self.__setPlayerSalaryPerWeek(iii)
         self.__signingDate = datetime.datetime.strptime(str(iv), "%Y-%m-%d").strftime('%Y-%m-%d')
+        # print('########',iv,self.__signingDate)
         self.__setContractDurationInYears(v)
         self.__setNumberOfMatchesPlayed(vi)
 
     # abstract fun
     def printPlayerData(self):
-        print(self.__getAllInfo())
+        # print(self.__getAllInfo())
+        return self.__getAllInfo()
 
     def calcSalaryPerYear(self):
         return self.playerSalaryPerWeek *4*12
