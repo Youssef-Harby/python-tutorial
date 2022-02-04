@@ -36,7 +36,7 @@ def callbackf():
      # if change:
           st.session_state.count +=1
           p1 = player(i,ii,iii,iv,v,vi)
-          st.write(p1.printPlayerData())
+          # st.write(p1.printPlayerData())
           pdata1 = [p1.playerName,p1.playerNumber,p1.playerSalaryPerWeek,p1.playerSigningDate,p1.playerContractDurationInYears,p1.playerNumberOfMatchesPlayed,p1.calcSalaryPerYear(),p1.calcRemainingDuration()]
           st.session_state.set.append(pdata1)
 
