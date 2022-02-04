@@ -1,3 +1,5 @@
+from turtle import onclick
+from flask import session
 import streamlit as st
 import datetime 
 import pandas as pd
@@ -23,16 +25,25 @@ v = st.number_input('Contract Duration In Years',min_value=1, max_value=5, value
 
 vi = st.number_input('Number Of Matches Played',min_value=0, value=0, step=1)
 
-st.write(iv)
+# SetState
+data = []
+if 'set' not in st.session_state:
+     st.session_state.set = data
+if 'count' not in st.session_state:
+     st.session_state.count = 0
 
-result = st.button('Set') #(returns true/false)
 
-if result:
-     p1 = player(i,ii,iii,iv,v,vi)
-     st.write(p1.playerName)
-     st.write(p1.playerNumber)
-     st.write(p1.playerSalaryPerWeek)
-     st.write(p1.playerSigningDate)
-     st.write(p1.playerContractDurationInYears)
-     st.write(p1.playerNumberOfMatchesPlayed)
-     st.write(p1.calcSalaryPerYear())
+def callbackf():
+     # if change:
+          st.session_state.count +=1
+          p1 = player(i,ii,iii,iv,v,vi)
+          pdata1 = [p1.playerName,p1.playerNumber,p1.playerSalaryPerWeek,p1.playerSigningDate,p1.playerContractDurationInYears,p1.playerNumberOfMatchesPlayed]
+          st.session_state.set.append(pdata1)
+
+change = st.button('Change',on_click=callbackf) #(returns true/false)
+
+df = pd.DataFrame(st.session_state.set, columns = ['Name', 'Number','Salary/Week','Signing Date', 'Contract Duration / Years','Number Of Matches Played'])
+st.table(df.head(st.session_state.count))
+# st.dataframe(df)
+# st.write('set = ', st.session_state.set)
+# st.write('count = ', st.session_state.count)
