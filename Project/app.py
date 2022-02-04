@@ -1,10 +1,7 @@
-from turtle import onclick
-from flask import session
 import streamlit as st
 import datetime 
 import pandas as pd
 from player import *
-import abc
 
 st.write(""" # Python OOP Project """)
     
