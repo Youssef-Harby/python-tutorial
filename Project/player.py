@@ -1,5 +1,6 @@
 import abc
 import datetime
+import math
 # 1
 # The class member is an abstract class.
 # The class member has three abstract methods: printPlayerData, calcSalaryPerYear, and
@@ -142,6 +143,6 @@ class player(member):
         d2 = datetime.datetime.today()
         print(d2-d1)
         if (self.playerContractDurationInYears*12*30)-(d2-d1).days > 0:
-            return (self.playerContractDurationInYears * 52)-((d2 - d1).days/7)
+            return math.floor((self.playerContractDurationInYears * 52)-((d2 - d1).days/7))
         else:
             return -1
