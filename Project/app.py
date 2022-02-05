@@ -30,17 +30,18 @@ if 'set' not in st.session_state:
      st.session_state.set = data
 if 'count' not in st.session_state:
      st.session_state.count = 0
+def callbackfSet():
+     st.session_state.count +=1
+     p1 = player(i,ii,iii,iv,v,vi)
+     # st.write(p1.printPlayerData())
+     pdata1 = [p1.playerName,p1.playerNumber,p1.playerSalaryPerWeek,p1.playerSigningDate,p1.playerContractDurationInYears,p1.playerNumberOfMatchesPlayed,p1.calcSalaryPerYear(),p1.calcRemainingDuration()]
+     st.session_state.set.append(pdata1)
 
+def callbackfDel():
+     st.session_state.set.pop(len(st.session_state.set)-1)
 
-def callbackf():
-     # if change:
-          st.session_state.count +=1
-          p1 = player(i,ii,iii,iv,v,vi)
-          # st.write(p1.printPlayerData())
-          pdata1 = [p1.playerName,p1.playerNumber,p1.playerSalaryPerWeek,p1.playerSigningDate,p1.playerContractDurationInYears,p1.playerNumberOfMatchesPlayed,p1.calcSalaryPerYear(),p1.calcRemainingDuration()]
-          st.session_state.set.append(pdata1)
-
-set = st.button('Setting',on_click=callbackf) #(returns true/false)
+set = st.button('Set',on_click=callbackfSet) #(returns true/false)
+delete = st.button('Delete',on_click=callbackfDel)
 
 df = pd.DataFrame(st.session_state.set, columns = ['Name', 'Number','Salary/Week','Signing Date', 'Contract Duration / Years','Number Of Matches Played','Salary / Year','Remaining Duration/Weeks'])
 st.table(df.head(st.session_state.count))
