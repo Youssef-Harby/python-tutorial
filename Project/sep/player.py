@@ -6,6 +6,8 @@ import datetime
 # calcRemainingDuration.
 
 # 2
+
+
 class player(member):
     __playerName = None  # i
     __playerNumber = None  # ii
@@ -114,8 +116,9 @@ class player(member):
     # abstract fun
     def printPlayerData(self):
         return self.__getAllInfo()
-    # def __repr__(self):
-        # return "Name: {0}\n PlayerNumber: {1}\n Player Salary: {2}\n Contract Duration: {3}\n".format(self.__playerName,self.__playerNumber,self.__playerSalaryPerWeek,self.__contractDurationInYears)
+
+    def __repr__(self):
+        return "\n Name: {0}\n PlayerNumber: {1}\n Player Salary: {2}\n Contract Duration: {3}\n Number Of Matches Played: {4}\n".format(self.__playerName, self.__playerNumber, self.__playerSalaryPerWeek, self.__contractDurationInYears, self.__numberOfMatchesPlayed)
 
     def calcSalaryPerYear(self):
         return self.playerSalaryPerWeek * 4*12
@@ -125,7 +128,7 @@ class player(member):
     def calcRemainingDuration(self):
         d1 = datetime.datetime.strptime(self.playerSigningDate, '%Y-%m-%d')
         d2 = datetime.datetime.today()
-        print(d2-d1)
+        # print(d2-d1)
         if (self.playerContractDurationInYears*12*30)-(d2-d1).days > 0:
             return (self.playerContractDurationInYears * 52)-((d2 - d1).days/7)
         else:

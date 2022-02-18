@@ -45,28 +45,28 @@ class coach(member):
     def __setCoachSalaryPerWeek(self, cSalaryweek):
         if cSalaryweek <= 200000:
             self.__coachSalaryPerWeek = cSalaryweek
-            print('CoachSalaryPerWeek ', cSalaryweek)
+            # print('CoachSalaryPerWeek ', cSalaryweek)
         else:
             print("Player Salary per week should not exceed 200,000")
 
     def __setCoachContractDurationInYears(self, cContractDurationInYears):
         if cContractDurationInYears <= 3:
             self.__coachContractDurationInYears = cContractDurationInYears
-            print("contractDurationInYears ", cContractDurationInYears)
+            # print("contractDurationInYears ", cContractDurationInYears)
         else:
             print("it should be greater than or equal 3 years")
     
     def __setCoachExperienceYears(self,cExpInYears):
         if cExpInYears >= 8:
             self.__coachExperienceYears = cExpInYears
-            print("Coach Experience Years ", cExpInYears)
+            # print("Coach Experience Years ", cExpInYears)
         else:
             print("it should be greater than or equal 8 years")
 
     def __setCoachBonus(self,coachBonus):
         if coachBonus <= 50000:
             self.__coachBonus = coachBonus
-            print('Coach Bonus ', coachBonus)
+            # print('Coach Bonus ', coachBonus)
         else:
             print("Coach Bonus should not exceed 50,000")
         
@@ -108,6 +108,9 @@ class coach(member):
         self.__setCoachExperienceYears(cExpInYears)
         self.__setCoachBonus(coachBonus)
 
+    def __repr__(self):
+        return "\n Coach Name: {0}\n Coach Signing Date: {1}\n Coach Salary: {2}\n Contract Duration: {3}\n Coach Bonus: {4}\n Coach Experience Years: {5}\n".format(self.__coachName,self.__coachsigningDate,self.__coachSalaryPerWeek,self.__coachContractDurationInYears,self.__coachBonus,self.__coachExperienceYears)
+
 
     # abstract fun
     def printPlayerData(self):
@@ -119,7 +122,7 @@ class coach(member):
     def calcRemainingDuration(self):
         d1 = datetime.datetime.strptime(self.coachSigningDate, '%Y-%m-%d')
         d2 = datetime.datetime.today()
-        print(d2-d1)
+        # print(d2-d1)
         if (self.coachContractDurationInYears*12*30)-(d2-d1).days > 0:
             return (self.coachContractDurationInYears * 52)-((d2 - d1).days/7)
         else:

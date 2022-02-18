@@ -11,7 +11,7 @@ class teamCaptain(player):
     def __setBonus(self, ii):
         if ii <= 100000:
             self.__bonus = ii
-            print('playerSalaryPerWeek ', ii)
+            # print('playerSalaryPerWeek ', ii)
         else:
             print("Captain Bonus should not exceed 100,000")
 
