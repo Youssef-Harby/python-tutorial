@@ -114,7 +114,19 @@ class team:
             self.teamCaptain.playerSalaryPerWeek
         return result
 
-    def searchPlayer(self,pNum):
+    def searchPlayer(self, pNum):
+        for i in self.playersList:
+            if i.playerNumber == pNum:
+                return i.playerName
+
+    def deletePlayer(self, pNum):
+        for i in self.playersList:
+            if i.playerNumber == pNum:
+                self.playersList.remove(i)
+                return
+
+    #Indexer by number
+    def __getitem__(self, pNum):
         for i in self.playersList:
             if i.playerNumber == pNum:
                 return i.playerName

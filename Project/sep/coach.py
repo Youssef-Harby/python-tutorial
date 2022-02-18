@@ -1,11 +1,13 @@
 from memberABC import *
 import datetime
 # 4
+
+
 class coach(member):
     __coachName = None
     __coachSalaryPerWeek = None
     __coachsigningDate = None  # Date/Time DataType
-    __coachContractDurationInYears = None 
+    __coachContractDurationInYears = None
     __coachExperienceYears = None
     __coachBonus = None
 
@@ -55,30 +57,30 @@ class coach(member):
             # print("contractDurationInYears ", cContractDurationInYears)
         else:
             print("it should be greater than or equal 3 years")
-    
-    def __setCoachExperienceYears(self,cExpInYears):
+
+    def __setCoachExperienceYears(self, cExpInYears):
         if cExpInYears >= 8:
             self.__coachExperienceYears = cExpInYears
             # print("Coach Experience Years ", cExpInYears)
         else:
             print("it should be greater than or equal 8 years")
 
-    def __setCoachBonus(self,coachBonus):
+    def __setCoachBonus(self, coachBonus):
         if coachBonus <= 50000:
             self.__coachBonus = coachBonus
             # print('Coach Bonus ', coachBonus)
         else:
             print("Coach Bonus should not exceed 50,000")
-        
 
     # Deleters
+
     def __delCoachName(self):
         del self.__coachName
 
     def __delCoachSalaryPerWeek(self):
         del self.__coachSalaryPerWeek
 
-    def __delCoachSigningDate(self): # Don't know add it as property or not
+    def __delCoachSigningDate(self):  # Don't know add it as property or not
         del self.__coachsigningDate
 
     def __delCoachContractDurationInYears(self):
@@ -92,10 +94,13 @@ class coach(member):
 
     #Encapsulation / Proberty
     coachName = property(__getCoachName, __setCoachName, __delCoachName)
-    coachSalaryPerWeek = property(__getCoachSalaryPerWeek, __setCoachSalaryPerWeek, __delCoachSalaryPerWeek)
+    coachSalaryPerWeek = property(
+        __getCoachSalaryPerWeek, __setCoachSalaryPerWeek, __delCoachSalaryPerWeek)
     coachSigningDate = property(__getCoachSigningDate)
-    coachContractDurationInYears = property(__getCoachContractDurationInYears,__setCoachContractDurationInYears,__delCoachContractDurationInYears)
-    coachExperienceYears = property(__getCoachExperienceYears, __setCoachExperienceYears, __delCoachExperienceYears)
+    coachContractDurationInYears = property(
+        __getCoachContractDurationInYears, __setCoachContractDurationInYears, __delCoachContractDurationInYears)
+    coachExperienceYears = property(
+        __getCoachExperienceYears, __setCoachExperienceYears, __delCoachExperienceYears)
     coachBonus = property(__getCoachBonus, __setCoachBonus, __delCoachBonus)
     player1stAllInfo = property(__getCoachAllInfo)
 
@@ -109,10 +114,10 @@ class coach(member):
         self.__setCoachBonus(coachBonus)
 
     def __repr__(self):
-        return "\n Coach Name: {0}\n Coach Signing Date: {1}\n Coach Salary: {2}\n Contract Duration: {3}\n Coach Bonus: {4}\n Coach Experience Years: {5}\n".format(self.__coachName,self.__coachsigningDate,self.__coachSalaryPerWeek,self.__coachContractDurationInYears,self.__coachBonus,self.__coachExperienceYears)
-
+        return "\n Coach Name: {0}\n Coach Signing Date: {1}\n Coach Salary: {2}\n Contract Duration: {3}\n Coach Bonus: {4}\n Coach Experience Years: {5}\n".format(self.__coachName, self.__coachsigningDate, self.__coachSalaryPerWeek, self.__coachContractDurationInYears, self.__coachBonus, self.__coachExperienceYears)
 
     # abstract fun
+
     def printPlayerData(self):
         return self.__getCoachAllInfo()
 
