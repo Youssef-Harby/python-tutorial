@@ -167,19 +167,19 @@ value of the bonus and assign it to the bonus field
 if the player is found it will print his whole data and return its name.
 
 ### 6. **Test the code.**
-- [ ] Create a coach object.
-- [ ] Create a team object (team name, team position, coach)
-- [ ] Add 4 players using the function Add Player in the team object.
-- [ ] Use the built in function len() to print the number of players.
-- [ ] Print the team captain data.
-- [ ] Print the whole team data.
-- [ ] Call the calcAllSalary to find the total salaries in the team.
-- [ ] Call Search Player to find a player with a specific number.
-- [ ] Use the indexer to find the player with same number in point h.
-- [ ] Delete one of the players using Delete player function.
-- [ ] Print the team captain data.
-- [ ] Print the whole team data.
-- [ ] Use the built in function len() to print the number of players.
-- [ ] Call the calcAllSalary to find the total salaries in the team.
+- [x] Create a coach object.
+- [x] Create a team object (team name, team position, coach)
+- [x] Add 4 players using the function Add Player in the team object.
+- [x] Use the built in function len() to print the number of players.
+- [x] Print the team captain data.
+- [x] Print the whole team data.
+- [x] Call the calcAllSalary to find the total salaries in the team.
+- [x] Call Search Player to find a player with a specific number.
+- [x] Use the indexer to find the player with same number in point h.
+- [x] Delete one of the players using Delete player function.
+- [x] Print the team captain data.
+- [x] Print the whole team data.
+- [x] Use the built in function len() to print the number of players.
+- [x] Call the calcAllSalary to find the total salaries in the team.
 
 Thanks to ***Eng. Mohamed Reda***
