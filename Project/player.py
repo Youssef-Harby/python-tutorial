@@ -67,14 +67,14 @@ class player(member):
             self.__playerNumber = ii
             print('playerNumber ',ii)
         else:
-            print("Player Number shouldn’t exceed 3")
+            print("Player Number should not exceed 3")
 
     def __setPlayerSalaryPerWeek(self,iii):
         if iii <= 100000:
             self.__playerSalaryPerWeek = iii
             print('playerSalaryPerWeek ',iii)
         else:
-            print("Player Salary per week shouldn’t exceed 100,000")
+            print("Player Salary per week should not exceed 100,000")
 
     def __setContractDurationInYears(self,v):
         if v <= 5:
